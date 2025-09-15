@@ -35,18 +35,21 @@ function AdminRoute({ children }) {
 export default function App() {
   return (
     <AuthProvider>
-       <ThemeProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/admin" element={
-            <AdminRoute>
-            <AdminDashboard />
-            </AdminRoute>} />
-        </Routes>
-      </Router>
+      <ThemeProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/admin"
+              element={
+                <AdminRoute>
+                  <AdminDashboard />
+                </AdminRoute>
+              }
+            />
+          </Routes>
+        </Router>
       </ThemeProvider>
-      
     </AuthProvider>
   );
 }

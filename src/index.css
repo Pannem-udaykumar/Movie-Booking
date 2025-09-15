@@ -72,7 +72,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Movie list container */
+
 .movie-list-container {
   background-color: inherit;
   color: inherit;
@@ -80,7 +80,7 @@ body {
   min-height: 100vh;
 }
 
-/* Movie card */
+
 .movie-card {
   background-color: inherit;
   color: inherit;
@@ -90,7 +90,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Controls (search, select, button) */
+
 .controls input,
 .controls select,
 .controls button {
@@ -102,7 +102,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover states */
+
 .controls button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }

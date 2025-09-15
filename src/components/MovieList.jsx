@@ -42,11 +42,12 @@ export default function MovieList({ movies }) {
     <div className="movie-list-container">
        
       <div className="controls">
+        {/* 🔍 Live Search */}
         <input
           type="text"
           placeholder="Search movies..."
           value={searchQuery}
-          onChange={handleSearchChange}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
 
         <select value={filterType} onChange={handleFilterChange}>

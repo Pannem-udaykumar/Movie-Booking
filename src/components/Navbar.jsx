@@ -7,6 +7,7 @@ import FilterDropdown from "./FilterDropdown";
 import { useTheme } from "../context/ThemeContext";
 import { isAdmin } from "../Services/adminService";
 
+
 export default function Navbar({ onFilterChange, onSearch }) {
   const [query, setQuery] = useState("");
   const { user } = useAuth();
@@ -28,6 +29,8 @@ export default function Navbar({ onFilterChange, onSearch }) {
     checkAdmin();
   }, [user]);
 
+  
+
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (query.trim() && onSearch) {
@@ -35,7 +38,7 @@ export default function Navbar({ onFilterChange, onSearch }) {
     }
   };
 
-  // New: Login handlers for user/admin
+  
   const handleLogin = async () => {
     try {
       await loginWithGoogle();
@@ -47,12 +50,12 @@ export default function Navbar({ onFilterChange, onSearch }) {
   return (
     <nav className="navbar">
       <img
-        src="https://tse1.mm.bing.net/th/id/OIP.eCzHGGqCi1JkY9GqT-zrswHaHO?cb=thfc1&pid=ImgDet&w=178&h=173&c=7&dpr=1.5&o=7&rm=3"
+        src="https://img.icons8.com/fluency/96/movie.png"
         alt="Movie Icon"
         style={{ width: 40, height: 40 }}
       />
 
-      <h3>Welcome to Movie Explorer</h3>
+      <h3 class="heading">Welcome to Movie Explorer</h3>
 
       <div className="navbar-left">
         <Link to="/" className="logo" />
@@ -75,9 +78,7 @@ export default function Navbar({ onFilterChange, onSearch }) {
             onChange={(e) => setQuery(e.target.value)}
             className="search-input"
           />
-          <button type="submit" className="search-button">
-            🔍
-          </button>
+          
         </form>
 
         <FilterDropdown onFilterChange={onFilterChange} />

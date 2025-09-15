@@ -1,4 +1,4 @@
-// context/ThemeContext.js
+
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext();
@@ -13,7 +13,7 @@ export const ThemeProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    // Apply theme class to body
+   
     document.body.classList.remove("light", "dark");
     document.body.classList.add(theme);
     console.log("Theme applied:", theme);
@@ -21,57 +21,58 @@ export const ThemeProvider = ({ children }) => {
   }, [theme]);
 
   useEffect(() => {
-    // Inject theme styles once on mount
     const styleTag = document.createElement("style");
     styleTag.innerHTML = `
-  body.light {
-    --bg-main: #ffffff;
-    --text-main: #000000;
-    --card-bg: #ffffff;
-    --card-text: #333333;
-    --grid-bg: #f0f0f0;
-    --button-bg: #241ae4ff;
-    --button-hover: #1259a5;
-  }
+body.dark {
+  --bg-main: #121212;
+  --text-main: #ffffff;
+  --card-bg: #1e1e1e;
+  --card-text: #eeeeee;
+  --grid-bg: #1a1a1a;
+  --button-bg: #2196f3;
+  --button-hover: #1565c0;
+  --navbar-bg: #1e1e1e;
+  --navbar-text: #ffffff;
+}
 
-  body.dark {
-    --bg-main: #121212;
-    --text-main: #ffffff;
-    --card-bg: #1e1e1e;
-    --card-text: #eeeeee;
-    --grid-bg: #1a1a1a;
-    --button-bg: #2196f3;
-    --button-hover: #1565c0;
-  }
+body.light {
+  --bg-main: #ffffff;
+  --text-main: #333333;
+  --card-bg: #ffffff;
+  --card-text: #333333;
+  --grid-bg: #f0f0f0;
+  --button-bg: #241ae4ff;
+  --button-hover: #1259a5;
+  --navbar-bg: #ffffff;
+  --navbar-text: #333333;
+}
 
-  body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  .navbar {
-    background-color: inherit;
-    color: inherit;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .btn-theme-toggle {
-    background: none;
-    border: none;
-    color: inherit;
-    cursor: pointer;
-    font-size: 1.2rem;
-  }
+.navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+...
 `;
+
 
     document.head.appendChild(styleTag);
 
-    // Cleanup on unmount (optional)
     return () => {
       document.head.removeChild(styleTag);
     };
-  }, []); // Only run once
+  }, []); 
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

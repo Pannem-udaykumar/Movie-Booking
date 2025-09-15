@@ -1,4 +1,4 @@
-/* Root styles for light/dark themes */
+
 body.light .admin-dashboard {
   background: #ffffff;
   color: #1a1a1a;
@@ -9,7 +9,7 @@ body.dark .admin-dashboard {
   color: #e0e0e0;
 }
 
-/* Container */
+
 .admin-dashboard {
   max-width: 1100px;
   margin: 40px auto;
@@ -19,7 +19,7 @@ body.dark .admin-dashboard {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Title */
+
 .admin-dashboard h2 {
   text-align: center;
   margin-bottom: 30px;
@@ -28,7 +28,7 @@ body.dark .admin-dashboard {
   letter-spacing: 0.5px;
 }
 
-/* Table */
+
 .admin-table {
   width: 100%;
   border-collapse: separate;
@@ -38,14 +38,14 @@ body.dark .admin-dashboard {
   font-size: 16px;
 }
 
-/* Header Row */
+
 .admin-table thead tr {
   background: linear-gradient(90deg, #007bff, #00bcd4);
   color: #fff;
   font-weight: 600;
 }
 
-/* Table Cells */
+
 .admin-table th,
 .admin-table td {
   padding: 16px 20px;
@@ -53,26 +53,26 @@ body.dark .admin-dashboard {
   transition: background 0.3s ease;
 }
 
-/* Light Theme Cell Colors */
+
 body.light .admin-table td {
   background-color: #ffffff;
   color: #333;
 }
 
-/* Dark Theme Cell Colors */
+
 body.dark .admin-table td {
   background-color: #2a2a2a;
   color: #ddd;
   border-bottom: 1px solid #444;
 }
 
-/* Row Hover */
+
 .admin-table tbody tr:hover {
   background-color: rgba(0, 123, 255, 0.08);
   cursor: pointer;
 }
 
-/* Zebra striping */
+
 .admin-table tbody tr:nth-child(even) td {
   background-color: rgba(0, 0, 0, 0.03);
 }
@@ -81,7 +81,7 @@ body.dark .admin-table tbody tr:nth-child(even) td {
   background-color: rgba(255, 255, 255, 0.03);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .admin-table thead {
     display: none;
@@ -121,7 +121,7 @@ body.dark .admin-table tbody tr:nth-child(even) td {
   }
 }
 
-/* Optional: Custom Scrollbar */
+
 .admin-dashboard::-webkit-scrollbar {
   height: 8px;
   width: 8px;
@@ -160,38 +160,39 @@ body.dark .admin-table tbody tr:nth-child(even) td {
 }
 
 .stat-card {
-  flex: 1 1 45%;
+  flex: 1 1 200px;
+  max-width: 250px;
   background: linear-gradient(135deg, #007bff, #00bcd4);
   color: white;
-  padding: 20px;
+  padding: 16px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
 .stat-card h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .stat-card p {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: bold;
 }
 
-/* Light theme override (optional) */
+
 .admin-dashboard.light {
   background-color: #ffffff;
   color: #000000;
 }
 
-/* Dark theme override */
+
 .admin-dashboard.dark {
   background-color: #1e1e1e;
   color: #ffffff;
@@ -224,3 +225,41 @@ body.dark .admin-table tbody tr:nth-child(even) td {
   background-color: #1259a5;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+.pagination-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.search-bar2 {
+  width: 50%;
+  max-width: 250px;
+  padding: 10px;
+  margin: 1rem 0;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}

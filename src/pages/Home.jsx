@@ -5,6 +5,7 @@ import BookingModal from "../components/BookingModal";
 import Navbar from "../components/Navbar";
 import { useTheme } from "../context/ThemeContext";
 
+
 export default function Home() {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -52,7 +53,7 @@ export default function Home() {
   const handleSearch = (query) => {
     setSearchQuery(query);
     setCurrentPage(1);
-    // Reset filters if you want when searching
+    
     setFilters({ genre: "", language: "", rating: "" });
   };
 
@@ -62,10 +63,10 @@ export default function Home() {
       [type]: value,
     }));
     setCurrentPage(1);
-    setSearchQuery(""); // Reset search when filtering
+    setSearchQuery(""); 
   };
 
-  // Pagination rendering code stays same
+  
   const renderPagination = () => (
     <div className="flex justify-center items-center mt-6 gap-4">
       <button
